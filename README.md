@@ -35,6 +35,16 @@ dist\GitHubReadmeAgent.exe
 
 下载或 clone 仓库后直接双击即可运行，不需要安装 Python 和任何依赖。
 
+普通用户获取方式：
+
+```powershell
+git clone --depth 1 https://github.com/niuziii/github-readme-agent.git
+cd github-readme-agent
+start .\dist\GitHubReadmeAgent.exe
+```
+
+也可以直接在 GitHub 仓库页面点击 `Code` → `Download ZIP`，解压后双击 `dist\GitHubReadmeAgent.exe`。
+
 ### 环境要求
 
 - Windows 10 / 11
