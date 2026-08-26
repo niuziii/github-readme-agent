@@ -25,6 +25,16 @@
 
 ## 快速开始
 
+### 直接运行 exe（推荐）
+
+仓库已附带 Windows 可执行文件：
+
+```text
+dist\GitHubReadmeAgent.exe
+```
+
+下载或 clone 仓库后直接双击即可运行，不需要安装 Python 和任何依赖。
+
 ### 环境要求
 
 - Windows 10 / 11
