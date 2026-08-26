@@ -14,7 +14,7 @@ echo Installing dependencies...
 if errorlevel 1 goto :error
 
 echo Building executable...
-".venv\Scripts\python.exe" -m PyInstaller --noconfirm --clean --onefile --windowed --name "GitHubReadmeAgent" main.py
+".venv\Scripts\python.exe" -m PyInstaller --noconfirm --clean --onefile --windowed --distpath . --name "GitHubReadmeAgent" main.py
 if errorlevel 1 goto :error
 
 echo.

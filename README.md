@@ -30,22 +30,26 @@
 仓库已附带 Windows 可执行文件：
 
 ```text
-dist\GitHubReadmeAgent.exe
+GitHubReadmeAgent.exe
 ```
 
 下载或 clone 仓库后直接双击即可运行，不需要安装 Python 和任何依赖。
+
+普通用户只需要双击根目录的 `GitHubReadmeAgent.exe`，不要运行 `run.bat` 或 `build.bat`。
 
 普通用户获取方式：
 
 ```powershell
 git clone --depth 1 https://github.com/niuziii/github-readme-agent.git
 cd github-readme-agent
-start .\dist\GitHubReadmeAgent.exe
+start .\GitHubReadmeAgent.exe
 ```
 
-也可以直接在 GitHub 仓库页面点击 `Code` → `Download ZIP`，解压后双击 `dist\GitHubReadmeAgent.exe`。
+也可以直接在 GitHub 仓库页面点击 `Code` → `Download ZIP`，解压后双击 `GitHubReadmeAgent.exe`。
 
-### 环境要求
+### 开发者：从源码运行
+
+以下内容仅给需要修改源码的开发者，普通用户直接使用 exe 即可，不需要执行。
 
 - Windows 10 / 11
 - Python 3.10+
@@ -77,8 +81,6 @@ GITHUB_TOKEN=
 MAX_README_CHARS=24000
 ```
 
-也可以直接双击 `run.bat`，首次运行会自动创建虚拟环境并安装依赖。
-
 ### 运行
 
 ```powershell
@@ -90,10 +92,10 @@ python main.py
 ## 打包为 Windows exe
 
 ```powershell
-.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --clean --onefile --windowed --name GitHubReadmeAgent main.py
+.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --clean --onefile --windowed --distpath . --name GitHubReadmeAgent main.py
 ```
 
-或直接双击 `build.bat`，生成文件位于 `dist\GitHubReadmeAgent.exe`。
+或直接双击 `build.bat`，生成文件位于 `GitHubReadmeAgent.exe`。
 
 ## 项目结构
 
@@ -104,6 +106,7 @@ python main.py
 ├── agent.py             # GitHub README 获取与 LLM 解读 Agent
 ├── config.py            # .env 配置管理
 ├── requirements.txt     # Python 依赖
+├── GitHubReadmeAgent.exe # 可直接双击运行的 Windows 程序
 ├── run.bat              # 一键运行脚本
 ├── build.bat            # 一键打包脚本
 └── .env.example         # 环境变量模板
